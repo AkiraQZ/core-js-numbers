@@ -452,7 +452,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return !Number.isNaN(parseFloat(number)) && Number.isFinite(number);
+  return typeof number === 'string' || value instanceof Number;
 }
 //
 /**
