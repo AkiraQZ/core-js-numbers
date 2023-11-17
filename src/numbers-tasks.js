@@ -452,7 +452,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return typeof number === 'string' || value instanceof Number;
+  return typeof number === 'number';
 }
 //
 /**
