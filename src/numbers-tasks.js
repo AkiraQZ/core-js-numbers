@@ -50,8 +50,7 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  const sub = value1 + value2;
-  return Math.floor(sub / 2);
+  return (value1 + value2) / 2;
 }
 
 /**
@@ -452,7 +451,10 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  return typeof number === 'number';
+  if (typeof number === 'number') {
+    return true;
+  }
+  return false;
 }
 //
 /**
