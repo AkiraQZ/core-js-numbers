@@ -50,7 +50,11 @@ function getCircleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+  const average = (value1 + value2) / 2;
+  if (average === Infinity) {
+    return 1.7976931348623157e308;
+  }
+  return average;
 }
 
 /**
@@ -451,10 +455,7 @@ function getNumberValue(number) {
  * '5'      => false
  */
 function isNumber(number) {
-  if (typeof number === 'number') {
-    return true;
-  }
-  return false;
+  return Number.isInteger(number) && Number.isFinite(number);
 }
 //
 /**
@@ -658,9 +659,9 @@ function getHypotenuse(a, b) {
  */
 function getCountOfOddNumbers(number) {
   let result = 0;
-  let count = number;
-  while (count >= 0) {
-    count %= 2;
+  let sub = number;
+  while (sub > 0) {
+    sub %= 2;
     result += 1;
   }
   return result;
